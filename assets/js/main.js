@@ -1,8 +1,5 @@
-const offset = 0
-const limit = 10
-const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`
 
-function convertPokemonToHtml(pokemon){
+function convertPokemonToLi(pokemon){
     return `<li class="pokemon">
     <span class="number">#001</span>
     <span class="name">${pokemon.name}</span>
@@ -16,14 +13,19 @@ function convertPokemonToHtml(pokemon){
 </li>`
 }
 
-fetch(url)
-    .then((response) => response.json()) // fazendo requisição
-    .then((jsonBody) => jsonBody.results)
-    .then((pokemonList) => {
-        // debugger
-        
-        for(let i = 0; i < pokemonList.length; i++)
-    })
-    .catch(error => console.error(error)) // quando der erro
+const pokemonList = document.getElementById('pokemonList')
+
+
+// Convertendo lista de pokemons objeto em lista de pokemons html 
+// se não vinher nenhuma lista, por default é criado uma lista vazia
+pokeApi.getPokemons().then((pokemons = []) => {
+    const listItems = []
+
+    for(let i = 0; i < pokemons.length; i++){
+        const pokemon = pokemons[i];
+        pokemonList.innerHTML += convertPokemonToLi(pokemon)
+        listItems.push(convertPokemonToLi(pokemon))
+    }
+})
 
 
