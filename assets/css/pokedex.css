@@ -9,7 +9,6 @@
 .pokemon {
     margin: 0.5rem;
     padding: 0.5rem 0.5rem;
-    background-color: #49D0B0;
     color: white;
     border-radius: 1rem;
     height: 120px;
@@ -23,6 +22,9 @@
     text-align: right;
 }
 
+.pokemon .name{
+    text-transform: capitalize; /* transforma primeira letra em maiusculo*/
+}
 .pokemon .detail {
     display: flex;
     flex-direction: row;
@@ -35,15 +37,17 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    text-align: center;
 }
 
 .pokemon .detail .types .type{
-    background-color: #61E1CA;
+
     color: white;
     padding: .25rem 1rem;
     margin: .25rem 0;
     font-size: .825rem;
     border-radius: 1rem;
+    filter: brightness(1.14);
 
 }
 .pokemon .detail img{
@@ -51,6 +55,14 @@
     width: 60px;
     align-self: flex-end;
     
+}
+
+.pagination{
+    bottom: 0;
+    position: fixed;
+    left: 47%;
+    
+    padding: 1rem;
 }
 
 @media screen and (min-width: 559px) {
