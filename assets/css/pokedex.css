@@ -65,15 +65,16 @@
     text-align: center;
     justify-content: center;
     width: 100%;
-    padding: 1rem;
+    padding: 5rem;
+    opacity: 70%;
 }
 
 .pagination button{
     background-color: #6c79db;
-    color: white;
+    color: #f1f1f1;
     border: none;
     border-radius: 1rem;
-    padding: .25rem .5rem;
+    padding: .75rem 2rem;
 }
 
 @media screen and (min-width: 559px) {
@@ -92,6 +93,7 @@
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr 1fr ;
     }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -99,7 +101,65 @@
         max-width: 992px;
         margin: 0 auto;
         height: auto;
-        margin: 1rem auto;
+        padding: 1.5rem;
+        margin: 2rem auto;
         border-radius: 1rem;
+        
     }
+
+    #btnBlue{
+        width:60px;
+        height:60px;
+        border: 5px solid; /* As 4 bordas sólidas com 25px de espessura */
+        background-color: rgb(7, 7, 170);
+        border-color: rgb(101, 100, 105); /* cores: topo, direita, inferior, esquerda */
+        border-radius: 50%;
+        position: relative;
+        float: left;
+        left: 54rem;
+        top: -2rem;
+        
+    }
+
+    #btnRed{
+        width:30px;
+        height:30px;
+        border: 3px solid; 
+        border-radius: 50%;
+        float: left;
+        left: 47rem;
+        top: -0.7rem;
+        position: relative;
+        background-color: rgb(170, 7, 29);
+        border-color: rgb(101, 100, 105);
+    }
+
+    #btnYellow{
+        width:30px;
+        height:30px;
+        border: 3px solid; 
+        border-radius: 50%;
+        float: left;
+        left: 42rem;
+        top: -0.7rem;
+        position: relative;
+        background-color: rgb(255, 196, 0);
+        border-color: rgb(101, 100, 105);
+    }
+
+    #btnGreen{
+        width:30px;
+        height:30px;
+        border: 3px solid; 
+        border-radius: 50%;
+        float: left;
+        left: 37rem;
+        top: -0.7rem;
+        position: relative;
+        background-color: rgb(0, 190, 63);
+        border-color: rgb(101, 100, 105);
+    }
+
+
 }
+

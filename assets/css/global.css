@@ -1,20 +1,25 @@
 *{
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    
 }
 
 body{
-    background-color: #F6F8FC;
+    background-color:#3c0101; /* #F6F8FC;*/
 }
 
 .content{
     padding: 1rem; /*espaçamento baseado no tamanho da font */
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: rgb(227, 225, 230)
+    
 }
 
 .content h1{
     margin: 0;
 }
+
+
+
 
