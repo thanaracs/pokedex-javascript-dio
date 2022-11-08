@@ -1,6 +1,12 @@
+const pokemonList = document.getElementById('pokemonList');
+const loadMoreButton = document.getElementById('loadMoreButton');
+const limit = 5
+let offset = 0;
 
-function convertPokemonToLi(pokemon) {
-    return `
+
+function loadPokemonItens(offset, limit){
+    pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+        const newHtml = pokemons.map((pokemon) => `
         <li class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
@@ -12,29 +18,14 @@ function convertPokemonToLi(pokemon) {
                      alt="${pokemon.name}">
             </div>
         </li>
-    `
+    `).join('')
+        pokemonList.innerHTML += newHtml
+    })
 }
 
-const pokemonList = document.getElementById('pokemonList')
+loadPokemonItens(offset, limit)
 
-
-// Convertendo lista de pokemons objeto em lista de pokemons html 
-// se não vinher nenhuma lista, por default é criado uma lista vazia
-pokeApi.getPokemons().then((pokemons = []) => {
-   //função transformadora
-    pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
-    
-    //const newList = pokemons.map(convertPokemonToLi).join('');
-    //const newLHtml = newList.join('')
-
-
-    // const listItems = []
-
-    // for(let i = 0; i < pokemons.length; i++){
-    //     const pokemon = pokemons[i];
-    //     pokemonList.innerHTML += convertPokemonToLi(pokemon)
-    //     listItems.push(convertPokemonToLi(pokemon))
-    // }
+loadMoreButton.addEventListener('click', () => {
+    offset += limit
+    loadPokemonItens(offset, limit)
 })
-
-
